@@ -1,25 +1,17 @@
-let tipo = prompt("en que vas a medir, en ml o en cm")
-if(tipo == "ml"){
-    let ml = Number(prompt("ingrese los milimetros"));
-    if(ml <= 0){
-        console.log("no es numero valido para medir")
-    }
-    else{
-    let cm = ml / 10
-    console.log("su medida en cm es" , cm)
-    }
-}
-else if(tipo == "cm"){
-     let cm = parseFloat(prompt("ingrese el valor en cm"));
-     if(cm <= 0){
-        console.log("no es numero valido para medir")
-     }
-     else{
-     let ml = cm * 10
-     console.log("su medida en milimetros es" , ml)
-     }
-}
-else{
-     console.log("el caracter no es correcto")
-}
+let precio = Number(prompt(`cuanto fue el precio total`));
+let numeroDePersonas = Number(prompt(`cuantas personas comieron`));
+let PersonaQueMasComio = prompt(`la persona que mas comio es`)
+let PersonaQueMenosComio = prompt(`la persona que menos comio es`)
+normal = precio / (numeroDePersonas + 1)
+nombreDeMuertoDeHambre = (precio / (numeroDePersonas + 1)) / 2
 
+let partes = numeroDePersonas + 1;
+let pagoNormal = precio / partes;
+let pagoDoble = pagoNormal * 2;
+let pagoMenos = pagoNormal * 0.5;
+
+
+
+console.log(` pago de cada persona ${pagoNormal.toFixed(2)}`);
+console.log(`${PersonaQueMasComio} que comio mas paga ${pagoDoble.toFixed(2)}`);
+console.log(`${PersonaQueMenosComio} que comio menos paga ${pagoMenos.toFixed(2)}`);
