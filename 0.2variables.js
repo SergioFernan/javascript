@@ -1,30 +1,16 @@
-let options = [`piedra`, `papel`, `tijera`];
-let azar = Math.floor(Math.random() * 3);
-let computer = options[azar];
-let player = prompt(`Elige: 
-    1. piedra
-    2. papel
-    3. tijera`);
-if (player === computer) {
-    console.log(`Empate!`);
-} else if (player === `piedra`) {
-    if (computer === `papel`) {
-        console.log(`Perdiste!`);
-    } else {
-        console.log(`Ganaste!`);
+let numeros = [2,3,6,7,3,6,8,9,4,5,6,7]
+let pares = []
+let impares = []
+
+for (i=0;i<numeros.length;i++){
+    posicionInicial = numeros[i]
+    if (posicionInicial % 2 === 0){
+        pares.push(posicionInicial) 
     }
-} else if (player === `papel`) {
-    if (computer === `tijera`) {
-        console.log(`Perdiste!`);
-    } else {
-        console.log(`Ganaste!`);
+    else{
+        impares.push(posicionInicial)
     }
-} else if (player === `tijera`) {
-    if (computer === `piedra`) {
-        console.log(`Perdiste!`);
-    } else {
-        console.log(`Ganaste!`);
-    }
-} else {
-    console.log(`Opción no válida!`);
 }
+
+console.log(pares)
+console.log(impares)
