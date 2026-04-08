@@ -1,30 +1,30 @@
-let operacion = Number(prompt(`ingrese la operacion que desea realizar
-    1. suma
-    2. resta
-    3. multiplicacion
-    4. division`))
-
-if (operacion <= 0 || operacion > 4 ) {
-    console.log(`operacion no valida`)
-} 
-else if (operacion === (1 || "suma")) {
-    let numero1 = Number(prompt(`ingrese el primer numero`))
-    let numero2 = Number(prompt(`ingrese el segundo numero`))
-    console.log(`el resultado es ${numero1 + numero2}`)
+let options = [`piedra`, `papel`, `tijera`];
+let azar = Math.floor(Math.random() * 3);
+let computer = options[azar];
+let player = prompt(`Elige: 
+    1. piedra
+    2. papel
+    3. tijera`);
+if (player === computer) {
+    console.log(`Empate!`);
+} else if (player === `piedra`) {
+    if (computer === `papel`) {
+        console.log(`Perdiste!`);
+    } else {
+        console.log(`Ganaste!`);
+    }
+} else if (player === `papel`) {
+    if (computer === `tijera`) {
+        console.log(`Perdiste!`);
+    } else {
+        console.log(`Ganaste!`);
+    }
+} else if (player === `tijera`) {
+    if (computer === `piedra`) {
+        console.log(`Perdiste!`);
+    } else {
+        console.log(`Ganaste!`);
+    }
+} else {
+    console.log(`Opción no válida!`);
 }
-else if (operacion === (2 || "resta")) {
-    let numero1 = Number(prompt(`ingrese el primer numero`))
-    let numero2 = Number(prompt(`ingrese el segundo numero`))
-    console.log(`el resultado es ${numero1 - numero2}`)
-}
-else if (operacion === (3 || "multiplicacion")){
-    let numero1 = Number(prompt(`ingrese el primer numero`))
-    let numero2 = Number(prompt(`ingrese el segundo numero`))
-    console.log(`el resultado es ${numero1 * numero2}`)
-}
-else if (operacion === (4 || "division")) {
-    let numero1 = Number(prompt(`ingrese el primer numero`))
-    let numero2 = Number(prompt(`ingrese el segundo numero`))
-    console.log(`el resultado es ${numero1 / numero2}`)
-}
-
