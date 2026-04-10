@@ -1,41 +1,38 @@
-﻿const estudiantes = [
-  { nombre: "Ana", nota: 4.5, descripcion: "Participa mucho en clase" },
-  { nombre: "Luis", nota: 3.5, descripcion: "Entrega tareas a tiempo" },
-  { nombre: "Carla", nota: 2.4, descripcion: "Habla mucho en clase" },
-  { nombre: "Mateo", nota: 1.2, descripcion: "Necesita reforzar matematicas y es parcero de Carla" },
-  { nombre: "Sofia", nota: 4.1, descripcion: "Muy buena comprension lectora" }
-];
+﻿let azar = Math.floor(Math.random() * 10) + 1;
 
-let max = estudiantes[0].nota;
-let min = estudiantes[0].nota;
-let mejorEstudiante = estudiantes[0];
+let estado = true;
 
-for (let i = 0; i < estudiantes.length; i++) {
-  const estudiante = estudiantes[i];
-  console.log(`Nombre: ${estudiante.nombre}, Nota: ${estudiante.nota}, Descripción: ${estudiante.descripcion}`);
 
-  if (estudiante.nota > max) {
-    max = estudiante.nota;
-  }
-  else if (estudiante.nota < min) {
-    min = estudiante.nota;
-  }
-    if (estudiante.nota >= 4.5) {
-    console.log("paso con promedio alto");
-  } else if (estudiante.nota >= 3.5) {
-    console.log("paso, buen trabajo");
-  } else {
-    console.log("perdio la materia");
-  }
+
+let numero = Number(prompt("Ingrese un numero del 1 al 10, tiene solo 6 intentos para adivinar el numero"));
+
+if (numero === azar) {
+  alert("Felicidades, adivinaste el numero");
+  estado = false;
 }
 
-for (let i = 1; i < estudiantes.length; i++) {
-  if (estudiantes[i].nota > mejorEstudiante.nota) {
-    mejorEstudiante = estudiantes[i];
-  }
+
+while (numero !== azar && estado) {    
+    if (numero === azar) {
+        alert(`Felicidades, adivinaste el numero`);
+                estado = false;
+                break;
+    } else {
+        alert("Intenta de nuevo");
+        numero = Number(prompt("Ingrese un numero del 1 al 10, sigue intentando"));
+        for (let i = 5; i > 0; i--) {
+            if (numero === azar) {
+                alert(`Felicidades, adivinaste el numero`);
+                estado = false;
+                break;
+            } else {
+                alert(`Te quedan ${i} intentos`);
+                numero = Number(prompt(`Ingrese un numero del 1 al 10, sigue intentando`));
+            }
+            
+        }
+        alert(`El numero era ${azar}`);
+            estado = false;
+            break;
+    }
 }
-
-console.log(`La nota mas alta es: ${max}`);
-console.log(`La nota mas baja es: ${min}`);
-console.log("Estudiante:", mejorEstudiante.nombre);
-
