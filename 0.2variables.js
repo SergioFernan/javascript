@@ -1,38 +1,42 @@
-﻿let azar = Math.floor(Math.random() * 10) + 1;
+﻿let numeroMes = Number(prompt("Ingrese el número del mes (1-12):"));
 
-let estado = true;
-
-
-
-let numero = Number(prompt("Ingrese un numero del 1 al 10, tiene solo 6 intentos para adivinar el numero"));
-
-if (numero === azar) {
-  alert("Felicidades, adivinaste el numero");
-  estado = false;
-}
-
-
-while (numero !== azar && estado) {    
-    if (numero === azar) {
-        alert(`Felicidades, adivinaste el numero`);
-                estado = false;
-                break;
-    } else {
-        alert("Intenta de nuevo");
-        numero = Number(prompt("Ingrese un numero del 1 al 10, sigue intentando"));
-        for (let i = 5; i > 0; i--) {
-            if (numero === azar) {
-                alert(`Felicidades, adivinaste el numero`);
-                estado = false;
-                break;
-            } else {
-                alert(`Te quedan ${i} intentos`);
-                numero = Number(prompt(`Ingrese un numero del 1 al 10, sigue intentando`));
-            }
-            
-        }
-        alert(`El numero era ${azar}`);
-            estado = false;
-            break;
-    }
-}
+switch (numeroMes) {
+    case 1:
+        alert(` Es enero Verano`);
+        break;
+    case 2:
+        alert(` Es febrero Verano`);
+        break;
+    case 3:
+        alert(` Es marzo Verano`);
+        break;
+    case 4:
+        alert(` Es abril Otoño`);
+        break;
+    case 5:
+        alert(` Es mayo Otoño`);
+        break;
+    case 6:
+        alert(` Es junio Otoño`);
+        break;
+    case 7:
+        alert(` Es julio Invierno`);
+        break;
+    case 8:
+        alert(` Es agosto Invierno`);
+        break;
+    case 9:
+        alert(` Es septiembre Invierno`);
+        break;
+    case 10:
+        alert(` Es octubre Primavera`);
+        break;
+    case 11:
+        alert(` Es noviembre Primavera`);
+        break;
+    case 12:
+        alert(` Es diciembre Primavera`);
+        break;
+    default:
+        alert(` Número de mes inválido. Por favor, ingrese un número entre 1 y 12.`);
+}   
